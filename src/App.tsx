@@ -67,9 +67,8 @@ const App: React.FC = () => {
         <>
           <div>
             <p className="description">
-              To get started, type the first goals / dreams that come to mind and press Add.
-            </p>
-            <p>When you are done, press Submit and find out which one you should tackle first.</p>
+              {`To get started, type the first goals / dreams that come to mind and press Add.
+              When you are done, press Submit and find out which one you should tackle first.`}</p>
           </div>
 
           <div className="section">
