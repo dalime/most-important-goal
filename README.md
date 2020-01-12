@@ -1,3 +1,9 @@
+### Most Important Goal
+
+Find out what goal you should be going after first by typing and entering. What you take the most time typing is what you are most afraid of doing, which is what you should do first.
+
+## Play Now
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
