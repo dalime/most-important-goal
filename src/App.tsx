@@ -69,8 +69,9 @@ const App: React.FC = () => {
       
       {show && (
         <div className="section">
-          <h2>What You Need to Do Now!</h2>
-          <h3>{mostImportant.text}</h3>
+          <h3>What You Need to Do Now:</h3>
+          <h2>{mostImportant.text}</h2>
+          <p>This goal was chosen because you took the longest to write it out. It means you are scared to do it. What you are scared of doing is often time what you should be doing the most.</p>
         </div>
       )}
 
