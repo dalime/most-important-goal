@@ -45,35 +45,46 @@ const App: React.FC = () => {
     setShow(true);
   };
 
+  const startOver = (): void => {
+    setGoals([]);
+    setMostImportant(defaultGoal);
+    setShow(false);
+  };
+
   return (
     <Container style={{ marginTop: '5vh', textAlign: 'center' }}>
       <div className="hero">
         <h1 className="title">Let's Find Out What You Have to Do</h1>
-        <p className="description">
-          To get started, type the first goals / dreams that come to mind and press Add.
-      </p>
-        <p>When you are done, press Submit and find out which one you should tackle first.</p>
       </div>
 
-      <div className="section">
-        <NewGoalForm addGoal={addGoal} />
-      </div>
-
-      <div className="section">
-        <GoalsList goals={goals} />
-      </div>
-
-      <div className="section">
-        <Button variant="outline-primary" onClick={() => findOut()} disabled={goals.length ? false : true}>Find Out</Button>
-      </div>
-      
-      {show && (
+      {show ? (
         <div className="section">
           <h3>What You Need to Do Now:</h3>
           <h2>{mostImportant.text}</h2>
           <p>This goal was chosen because you took the longest to write it out. It means you are scared to do it. What you are scared of doing is often time what you should be doing the most.</p>
         </div>
+      ) : (
+        <>
+          <div>
+            <p className="description">
+              To get started, type the first goals / dreams that come to mind and press Add.
+            </p>
+            <p>When you are done, press Submit and find out which one you should tackle first.</p>
+          </div>
+
+          <div className="section">
+            <NewGoalForm addGoal={addGoal} />
+          </div>
+
+          <div className="section">
+            <GoalsList goals={goals} />
+          </div>
+        </>
       )}
+
+      <div className="section">
+        <Button variant="outline-primary" onClick={() => show ? startOver() : findOut()} disabled={goals.length ? false : true}>{show ? 'Start Over' : 'Find Out'}</Button>
+      </div>
 
     </Container>
   );
